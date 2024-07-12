@@ -3,6 +3,7 @@ body {
     font-family: 'Arial', sans-serif;
     text-align: center;
     padding: 50px;
+    overflow: hidden; /* Prevent scrollbar from appearing during animations */
 }
 
 .container {
@@ -70,7 +71,7 @@ body {
     justify-content: space-around;
     margin-top: 20px;
     opacity: 0;
-    animation: fadeIn 2s 8s forwards; /* Delay for 8s to synchronize with previous animations */
+    animation: riseBalloons 2s 8s forwards; /* Delay for 8s to synchronize with previous animations */
 }
 
 .balloon {
@@ -78,6 +79,7 @@ body {
     height: 70px;
     border-radius: 50% 50% 50% 50%;
     position: relative;
+    animation: floatBalloon 6s infinite; /* Infinite float animation */
 }
 
 .balloon::after {
@@ -116,7 +118,7 @@ body {
     height: 50px;
     background-color: #ffcc00;
     border-radius: 50%;
-    animation: float 2s infinite;
+    animation: floatDecoration 2s infinite;
 }
 
 #confetti-container {
@@ -138,6 +140,30 @@ body {
 }
 
 @keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatBalloon {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatDecoration {
     0% {
         transform: translateY(0);
     }
@@ -186,5 +212,16 @@ body {
     100% {
         transform: translateY(100vh) rotate(720deg);
         opacity: 0;
+    }
+}
+
+@keyframes riseBalloons {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
