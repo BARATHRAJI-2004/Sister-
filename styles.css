@@ -139,6 +139,13 @@ body {
     animation: fall 5s ease-in-out forwards;
 }
 
+.wishes-container {
+    margin-top: 20px;
+    font-size: 1.2em;
+    opacity: 0;
+    animation: fadeIn 2s 12s forwards; /* Delay for 12s to synchronize with previous animations */
+}
+
 @keyframes float {
     0% {
         transform: translateY(0);
