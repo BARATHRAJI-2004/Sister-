@@ -10,13 +10,18 @@ body {
     margin: 0 auto;
 }
 
+.animated-text {
+    opacity: 0;
+    animation: fadeInText 2s forwards;
+}
+
 .cake {
     position: relative;
     width: 200px;
     height: 200px;
     margin: 0 auto;
     opacity: 0;
-    animation: fadeIn 2s forwards;
+    animation: fadeIn 2s 2s forwards;
 }
 
 .cake-body {
@@ -27,7 +32,7 @@ body {
     bottom: 0;
     border-radius: 10px;
     opacity: 0;
-    animation: growCake 2s 2s forwards; /* Delay for 2s to synchronize with fadeIn */
+    animation: growCake 2s 4s forwards; /* Delay for 4s to synchronize with fadeIn */
 }
 
 .candles {
@@ -38,7 +43,7 @@ body {
     top: 20px;
     width: 100%;
     opacity: 0;
-    animation: fadeIn 2s 4s forwards; /* Delay for 4s to synchronize with previous animations */
+    animation: fadeIn 2s 6s forwards; /* Delay for 6s to synchronize with previous animations */
 }
 
 .candle {
@@ -65,7 +70,7 @@ body {
     justify-content: space-around;
     margin-top: 20px;
     opacity: 0;
-    animation: fadeIn 2s 6s forwards; /* Delay for 6s to synchronize with previous animations */
+    animation: fadeIn 2s 8s forwards; /* Delay for 8s to synchronize with previous animations */
 }
 
 .balloon {
@@ -103,7 +108,7 @@ body {
     justify-content: space-around;
     margin-top: 20px;
     opacity: 0;
-    animation: fadeIn 2s 8s forwards; /* Delay for 8s to synchronize with previous animations */
+    animation: fadeIn 2s 10s forwards; /* Delay for 10s to synchronize with previous animations */
 }
 
 .decoration {
@@ -141,5 +146,16 @@ body {
     }
     100% {
         height: 60%;
+    }
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
     }
 }
